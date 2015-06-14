@@ -25,7 +25,7 @@ for n in range(1, 2, 1):
     #data[i] += np.sin((1 - (float(1)/(n**2))) * 2 * np.pi * t * 440)
 
 
-data = np.array([data* exp(t), data*exp(t) ])
+data = np.array([data* np.exp(t), data*np.exp(t) ])
 f = al.Sndfile(filename, 'w', alformat, 2, fs)
 f.write_frames(data.transpose())
 f.close
